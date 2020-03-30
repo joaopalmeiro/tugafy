@@ -3,9 +3,12 @@
 import csv
 import io
 import urllib.request as request
+import functools
+from typing import Dict
 
 
-def get_dict():
+@functools.lru_cache(maxsize=2)
+def get_dictionary() -> Dict[str, str]:
     url = "https://raw.githubusercontent.com/joaopalmeiro/en-pt-dict-DS-ML/master/data/dict.csv"
 
     response = request.urlopen(url)

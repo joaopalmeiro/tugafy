@@ -13,8 +13,9 @@ def get_dictionary() -> Dict[str, str]:
 
     response = request.urlopen(url)
 
-    csv_file = list(csv.reader(io.StringIO(
-        response.read().decode("utf-8")), delimiter=','))
+    csv_file = list(
+        csv.reader(io.StringIO(response.read().decode("utf-8")), delimiter=",")
+    )
 
     dictionary_dict = {term[0]: term[1] for term in csv_file[1:]}
 

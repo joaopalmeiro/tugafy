@@ -24,9 +24,5 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=REQUIREMENTS,
-    entry_points={
-        "console_scripts": [
-            "tugafy=tugafy.__main__:main",
-        ]
-    },
+    entry_points={"console_scripts": ["tugafy=tugafy.__main__:main",]},
 )
